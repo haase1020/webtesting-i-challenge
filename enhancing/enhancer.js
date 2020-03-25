@@ -14,7 +14,12 @@ function fail(item) {
 }
 
 function repair(item) {
-  return { ...item };
+  const newItem = {
+    name: item.name,
+    durability: 100,
+
+  }
+  return newItem;
 }
 
 function get(item) {
