@@ -37,3 +37,33 @@ describe ('enhancer.js', () => {
         })
     })
 })
+
+
+describe ('enhancer.js', () => {
+    describe('fail(item)', () => {
+        it('should decrease the durability of an item by 5 if enhancement is less than 15', () => {
+            const item = {
+                name: 'computer',
+                durability: 70,
+                enhancement: 13
+            };
+            expect(enhancer.fail(item).durability).toBe(65);
+        });
+        it('should decrease durability of an item by 10 if enhancement is 15 or more', () => {
+            const item = {
+                name: 'computer',
+                durability: 70,
+                enhancement: 17
+            };
+            expect(enhancer.fail(item).durability).toBe(60);
+        });
+        it('should decrease enhancement level of an item by 1 if enhancement is 16 or more', () => {
+            const item = {
+                name: 'computer',
+                durability: 70,
+                enhancement: 18
+            };
+            expect (enhancer.fail(item).enhancement).toBe(17);
+        });
+    })
+})
